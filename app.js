@@ -10,7 +10,6 @@ app.use(express.json())
 app.use(route)
 
 
-
 const dbConnection = async () => {
     
     try{
