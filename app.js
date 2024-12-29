@@ -13,12 +13,12 @@ app.use(route)
 const dbConnection = async () => {
     
     try{
-        const sequelize = new Sequelize('hammad', 'root', '',{
+        const sequelize = new Sequelize('hammad02', 'root', '',{
             host:'localhost',
             dialect: 'mysql'
         });
         const connection = await sequelize.authenticate();
-        console.log("Connection success", connection);
+        console.log("Connection success");
     }
     catch(error){
         console.log("error", error);
