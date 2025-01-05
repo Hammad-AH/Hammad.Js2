@@ -2,7 +2,20 @@ const express = require('express')
 const {getAllUsers} = require('../controller/user.controller')
 
 const route = express.Router();
+const models = require('../models')
 
+route.psot("/user", (req , res) => {
+    const {id, email, name, contact} = req.body;
+    const User = models.users;
+    User.create({
+        id: id,
+        email: email,
+        name: name,
+        contact: contact
+    })
+res.status(201).json({message: "User created Successfully"})
+
+})
 let user01 ={
     name:"hammad",
     id:1,
@@ -55,7 +68,17 @@ let user01 ={
        }
         }
 
-route.get('/', getAllUsers);
+route.get('/', (req , res) => {
+const users = models.users
+users.create({
+    email:
+    name:
+    contact:
+
+
+})
+
+});
 
 route.get('/users/:id', (req , res) => {
     try{
